@@ -1,0 +1,49 @@
+{
+	"name": "planalize-backend",
+	"description": "Rest API for planalize",
+	"version": "0.0.0",
+	"license": "AGPL-3.0",
+	"scripts": {
+		"build": "tsc && tsc-alias",
+		"start": "cross-env NODE_ENV=production node dist/index.js",
+		"dev:server": "wait-on tcp:5432 -i 1000 && prisma migrate dev && cross-env NODE_ENV=development node --watch -r ts-node/register src/index.ts",
+		"dev:db": "docker compose up",
+		"dev": "concurrently --kill-others-on-fail \"pnpm dev:db\" \"pnpm dev:server\"",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"@fastify/env": "4.2.0",
+		"@fastify/sensible": "5.2.0",
+		"@fastify/type-provider-typebox": "2.4.0",
+		"@prisma/client": "4.11.0",
+		"@sinclair/typebox": "0.26.3",
+		"fastify": "4.15.0",
+		"fastify-plugin": "4.5.0",
+		"http-status-codes": "2.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "18.15.7",
+		"@typescript-eslint/eslint-plugin": "5.56.0",
+		"@typescript-eslint/parser": "5.56.0",
+		"concurrently": "7.6.0",
+		"cross-env": "7.0.3",
+		"eslint": "8.36.0",
+		"eslint-config-prettier": "8.8.0",
+		"eslint-import-resolver-typescript": "3.5.3",
+		"eslint-plugin-import": "2.27.5",
+		"eslint-plugin-prettier": "4.2.1",
+		"eslint-plugin-simple-import-sort": "10.0.0",
+		"husky": "8.0.3",
+		"lint-staged": "13.2.0",
+		"pino-pretty": "10.0.0",
+		"prisma": "4.11.0",
+		"ts-node": "10.9.1",
+		"tsc-alias": "1.8.4",
+		"tsconfig-paths": "4.1.2",
+		"typescript": "5.0.2",
+		"wait-on": "7.0.1"
+	},
+	"engines": {
+		"node": ">=18.0.0 <19"
+	}
+}
