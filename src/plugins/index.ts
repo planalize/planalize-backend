@@ -1,4 +1,4 @@
-import fp from 'fastify-plugin';
+import { fastifyPlugin } from 'fastify-plugin';
 
 import type { FastifyPluginAsync } from 'fastify';
 
@@ -9,4 +9,4 @@ const plugins: FastifyPluginAsync = async (fastify) => {
 	await fastify.register(import('./swagger'));
 };
 
-export default fp(plugins);
+export default fastifyPlugin(plugins);

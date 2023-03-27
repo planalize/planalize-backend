@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client';
-import fp from 'fastify-plugin';
+import { fastifyPlugin } from 'fastify-plugin';
 
 import type { HttpErrorNames } from '@fastify/sensible/lib/httpError';
 import type { FastifyPluginCallback } from 'fastify';
@@ -34,4 +34,4 @@ const prismaErrorPlugin: FastifyPluginCallback = (fastify, _options, done) => {
 	done();
 };
 
-export default fp(prismaErrorPlugin);
+export default fastifyPlugin(prismaErrorPlugin);

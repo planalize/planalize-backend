@@ -1,5 +1,5 @@
 import { Type } from '@sinclair/typebox';
-import fp from 'fastify-plugin';
+import { fastifyPlugin } from 'fastify-plugin';
 
 import type { Static } from '@sinclair/typebox';
 import type { FastifyPluginAsync } from 'fastify';
@@ -22,4 +22,4 @@ const envPlugin: FastifyPluginAsync = async (fastify) => {
 	});
 };
 
-export default fp(envPlugin);
+export default fastifyPlugin(envPlugin);
