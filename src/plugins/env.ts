@@ -7,6 +7,7 @@ import type { FastifyPluginAsync } from 'fastify';
 const schema = Type.Object({
 	HOSTNAME: Type.String(),
 	PORT: Type.Number(),
+	SALT_OR_ROUNDS: Type.Union([Type.Number(), Type.String()]),
 });
 
 declare module 'fastify' {

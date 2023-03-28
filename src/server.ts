@@ -18,6 +18,7 @@ export const createServer = async () => {
 
 	await fastiy.register(import('@fastify/sensible'));
 	await fastiy.register(import('./plugins'));
+	await fastiy.register(import('./modules'));
 
 	return fastiy;
 };

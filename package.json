@@ -19,11 +19,13 @@
 		"@fastify/type-provider-typebox": "2.4.0",
 		"@prisma/client": "4.11.0",
 		"@sinclair/typebox": "0.26.3",
+		"bcrypt": "5.1.0",
 		"fastify": "4.15.0",
 		"fastify-plugin": "4.5.0",
 		"http-status-codes": "2.2.0"
 	},
 	"devDependencies": {
+		"@types/bcrypt": "5.0.0",
 		"@types/node": "18.15.7",
 		"@typescript-eslint/eslint-plugin": "5.56.0",
 		"@typescript-eslint/parser": "5.56.0",
