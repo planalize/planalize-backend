@@ -1,5 +1,7 @@
 import { Type } from '@sinclair/typebox';
 
+import { openAPIHttpErrorSchema } from '@/schemas';
+
 import type { Static } from '@sinclair/typebox';
 
 import type { FastifySchemaTypebox } from '@/types';
@@ -20,6 +22,7 @@ export const createUserSchema = {
 	}),
 	response: {
 		201: Type.Ref(userSchema),
+		409: Type.Ref(openAPIHttpErrorSchema),
 	},
 } satisfies FastifySchemaTypebox;
 
