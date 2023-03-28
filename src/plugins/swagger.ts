@@ -8,7 +8,8 @@ const swaggerPlugin: FastifyPluginAsync = async (fastify) => {
 	await fastify.register(fastifySwagger, {
 		openapi: {
 			info: {
-				title: 'Planalize Rest API documentation',
+				title: 'Planalize API',
+				description: 'Documentation for Planalize Rest API.',
 				version: '0.0.1',
 			},
 		},
